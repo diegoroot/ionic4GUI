@@ -1,5 +1,7 @@
 {
   "name": "proyectoi",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

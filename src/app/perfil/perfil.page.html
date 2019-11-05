@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/not"></ion-back-button>
+  </ion-buttons>
+    <ion-title>Información</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-card *ngIf="person">
+  <ion-img [src]="person.picture"></ion-img>
+  <ion-card-content>
+    <ion-card-title>{{ person.name}}</ion-card-title>
+    <div padding>
+      <ion-item icon-left>
+          <ion-icon slot="start" name="ios-man"></ion-icon>
+          {{ person.name }}
+      </ion-item>
+      <ion-item text-wrap>
+          <ion-icon slot="start" name="mail"></ion-icon>
+          {{ person.email }}
+      </ion-item>
+    </div>
+  </ion-card-content>
+</ion-card>
+</ion-content>
