@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title>Registrar Reserva</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="floating">ID  </ion-label>
+      <ion-input type="text" [(ngModel)]="res_id"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Numero </ion-label>
+      <ion-input type="text" [(ngModel)]="res_num"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">hora inicio</ion-label>
+      <ion-input type="text" [(ngModel)]="res_hora_ini"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">hora fin</ion-label>
+      <ion-input type="text" [(ngModel)]="res_hora_fin"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">id sala </ion-label>
+      <ion-input type="text" [(ngModel)]="res_id_sal"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">res fecha </ion-label>
+      <ion-input type="text" [(ngModel)]="res_fecha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">time </ion-label>
+      <ion-input type="text" [(ngModel)]="timestampp"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <ion-button expand="block" shape="round" (click)="addRegister()">Submit</ion-button>
+  </div>
+
+</ion-content>

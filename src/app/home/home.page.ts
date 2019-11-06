@@ -44,8 +44,18 @@ export class HomePage {
         this.ap.appPages = [
           {
             title: 'Reservas',
-            url: '/list',
+            url: '/listarreservass',
             icon: 'list'
+          },
+          {
+            title: 'Mis reservas',
+            url: '/listarreservas1',
+            icon: 'list'
+          },
+          {
+            title: 'Crear reserva',
+            url: '/registrarreserva',
+            icon: 'add'
           },
           {
             title: 'Perfil',
@@ -58,6 +68,7 @@ export class HomePage {
         this.person.push(tr.correo+'');
         this.person.push('null');
         this.person.push(tr.nombre+'');
+        this.person.push(tr.id+'');
         console.log(this.person);
         this.postPvdr.setDestn(this.person);
         this.router.navigate(['/not']);
@@ -105,19 +116,34 @@ export class HomePage {
         this.si();
         this.ap.appPages = [
           {
-            title: 'Home usu',
-            url: '/home',
-            icon: 'home'
+            title: 'Reservas',
+            url: '/listarreservass',
+            icon: 'list'
           },
           {
-            title: 'List usu',
-            url: '/list',
+            title: 'Scanner QR',
+            url: '/scanner',
+            icon: 'search'
+          },
+          {
+            title: 'Mis reservas',
+            url: '/listarreservas1',
             icon: 'list'
+          },
+          {
+            title: 'Crear reserva',
+            url: '/registrarreserva',
+            icon: 'add'
           },
           {
             title: 'Perfil',
             url: '/perfil',
             icon: 'person'
+          },
+          {
+            title: 'Cerrar sesión',
+            url: '/logoutt',
+            icon: 'power'
           }
         ];
         //nombre-cod-correo-contraseña

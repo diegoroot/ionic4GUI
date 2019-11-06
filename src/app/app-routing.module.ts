@@ -19,7 +19,12 @@ const routes: Routes = [
   { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },
   { path: 'not', loadChildren: './not/not.module#NotPageModule' },
   { path: 'listarreservas', loadChildren: './listarreservas/listarreservas.module#ListarreservasPageModule' },
-  { path: 'detalle', loadChildren: './detalle/detalle.module#DetallePageModule' }
+  { path: 'detalle', loadChildren: './detalle/detalle.module#DetallePageModule' },
+  { path: 'registrarreserva', loadChildren: './registrarreserva/registrarreserva.module#RegistrarreservaPageModule' },
+  { path: 'listarreservas1', loadChildren: './listarreservas1/listarreservas1.module#Listarreservas1PageModule' },
+  { path: 'listarreservass', loadChildren: './listarreservass/listarreservass.module#ListarreservassPageModule' },
+  { path: 'scanner', loadChildren: './scanner/scanner.module#ScannerPageModule' },
+  { path: 'logoutt', loadChildren: './logoutt/logoutt.module#LogouttPageModule' }
 ];
 
 @NgModule({
