@@ -10,6 +10,10 @@
   </ion-header>
   
   <ion-content>
+      <ion-searchbar placeholder="Buscar usuario..."
+      animated
+      (ionChange)="buscarUsuario( $event )">
+      </ion-searchbar>
      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
       <ion-refresher-content
         pullingIcon="arrow-dropdown"
@@ -18,13 +22,13 @@
         refreshingText="Refreshing...">
       </ion-refresher-content>
     </ion-refresher>
-    <ion-list>
-        <ion-item-sliding *ngFor="let customer of reservas">
+    <ion-list *ngIf="reservas.length > 0">
+        <ion-item-sliding *ngFor="let usuario of reservas | filtro:textoBuscar">
           <ion-item>
             <ion-label> <p style="color:black;">
-                <b>Nombre:</b> {{customer.prof_nombre}}
+                <b>Nombre:</b> {{usuario.prof_nombre}}
                 <br>
-                <b>Sala de sistemas:</b> {{customer.sal_nombre}}
+                <b>Sala de sistemas:</b> {{usuario.sal_nombre}}
                 </p></ion-label>
           </ion-item>
           <ion-item-options side="end">

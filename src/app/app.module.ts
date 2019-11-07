@@ -17,7 +17,7 @@ import { Network } from '@ionic-native/network/ngx';
 import { PostProviderService } from './providers/post-provider.service';
 import { NavController} from '@ionic/angular';
 import { DetallePageModule} from './detalle/detalle.module';
-
+import { LogouttPageModule } from './logoutt/logoutt.module';
 const firebaseConfig = {
   apiKey: "AIzaSyAAxPEi-X-JFIsYajzk0gzLdDND-SMspTg",
   authDomain: "decent-era-254723.firebaseapp.com",
@@ -48,6 +48,7 @@ const firebaseConfig = {
     Network,
     PostProviderService,
     DetallePageModule,
+    LogouttPageModule,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

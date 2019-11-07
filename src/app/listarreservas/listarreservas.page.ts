@@ -15,13 +15,23 @@ export class ListarreservasPage implements OnInit {
   reservas: any = [];
   limit: number = 10;
   start: number = 0;
-
+  usuarios: any[] = [];
+  textoBuscar = '';
+  
   constructor(private router: Router,
     private postPvdr: PostProviderService,
     public toastController: ToastController,
     public detalle: DetallePageModule) { }
 
   ngOnInit() {
+  }
+
+  buscarUsuario( event ) {
+
+    const texto = event.target.value;
+    this.textoBuscar = texto;
+
+
   }
 
   ionViewWillEnter() {

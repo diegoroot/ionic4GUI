@@ -48,6 +48,11 @@ export class HomePage {
             icon: 'list'
           },
           {
+            title: 'Scanner QR',
+            url: '/scanner',
+            icon: 'search'
+          },
+          {
             title: 'Mis reservas',
             url: '/listarreservas1',
             icon: 'list'
@@ -61,6 +66,11 @@ export class HomePage {
             title: 'Perfil',
             url: '/perfil',
             icon: 'person'
+          },
+          {
+            title: 'Cerrar sesión',
+            url: '/logoutt',
+            icon: 'power'
           }
         ];
         var tr = data.result;
