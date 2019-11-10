@@ -253,6 +253,7 @@ export class HomePage {
                   this.person.push(success.user.photoURL+'');
                   this.person.push(success.user.displayName+'');
                   this.postPvdr.setDestn(this.person);
+                  this.router.navigate(['/not']);
                 }else{
                   this.singOut1();
                   this.presentAlert("Debes ingresar con un correo institucional");
@@ -266,7 +267,7 @@ export class HomePage {
       this.displayAlert(msg,"Gplus signin failed2")
     });
     if(this.person[0] === "google"){
-      this.router.navigate(["/not"]);
+      this.router.navigate(['/not']);
     }
 
   }
