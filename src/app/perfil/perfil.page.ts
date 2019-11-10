@@ -17,9 +17,6 @@ export class PerfilPage implements OnInit {
               private route: ActivatedRoute,
               private router: Router) {
     this.person = this.dataService.getDestn();
-  }
-
-  ngOnInit() {
     this.user = {
       name: this.person[3]+'',
       email: this.person[1]+'',
@@ -30,6 +27,10 @@ export class PerfilPage implements OnInit {
     }
     console.log(this.user.email);
     this.person = this.user;
+  }
+
+  ngOnInit() {
+    
   }
 
 }

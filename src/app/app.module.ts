@@ -18,14 +18,15 @@ import { PostProviderService } from './providers/post-provider.service';
 import { NavController} from '@ionic/angular';
 import { DetallePageModule} from './detalle/detalle.module';
 import { LogouttPageModule } from './logoutt/logoutt.module';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 const firebaseConfig = {
-  apiKey: "AIzaSyAAxPEi-X-JFIsYajzk0gzLdDND-SMspTg",
+  apiKey: "AIzaSyCiL1VWUvy6VmCHd1OvE0B3hlKcs5Sii1c",
   authDomain: "decent-era-254723.firebaseapp.com",
-  databaseURL: "https://decent-era-254723.firebaseio.com",
-  projectId: "decent-era-254723",
-  storageBucket: "decent-era-254723.appspot.com",
+  databaseURL: "https://reservas-adf4d.firebaseio.com",
+  projectId: "reservas-adf4d",
+  storageBucket: "reservas-adf4d.appspot.com",
   messagingSenderId: "78586309499",
-  appId: "1:78586309499:web:adaa6693778e9c84666bde",
+  appId: "1:369948839335:android:6fa00d52dc62418fe07a82",
   measurementId: "G-HV33K1L96F"
 };
 
@@ -45,6 +46,7 @@ const firebaseConfig = {
     StatusBar,
     SplashScreen,
     GooglePlus,
+    NativeStorage,
     Network,
     PostProviderService,
     DetallePageModule,

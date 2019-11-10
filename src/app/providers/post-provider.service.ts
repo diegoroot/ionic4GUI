@@ -7,7 +7,7 @@ import { map } from "rxjs/operators";
 })
 export class PostProviderService {
 
-    server: string = 'http://localhost/ionic4login/server_api/';
+    server: string = 'http://192.168.43.63/ionic4login/server_api/';
     public objeto: any;
     public res:any;
     constructor(public http: Http) {

@@ -15,6 +15,8 @@ export class ListarreservassPage implements OnInit {
   reservas: any = [];
   limit: number = 10;
   start: number = 0;
+  usuarios: any[] = [];
+  textoBuscar = '';
 
   constructor(private router: Router,
     private postPvdr: PostProviderService,
@@ -22,6 +24,11 @@ export class ListarreservassPage implements OnInit {
     public detalle: DetallePageModule) { }
 
   ngOnInit() {
+  }
+
+  buscarUsuario( event ) {
+    const texto = event.target.value;
+    this.textoBuscar = texto;
   }
 
   ionViewWillEnter() {
