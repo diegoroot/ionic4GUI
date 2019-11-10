@@ -9,10 +9,10 @@ import { AppComponent} from '../app.component';
   styleUrls: ['./logoutt.page.scss'],
 })
 export class LogouttPage implements OnInit {
-
+  per:any[];
   constructor(public pos: PostProviderService,
     private router: Router,
-    public ap: AppComponent) { 
+    public ap: AppComponent) {      
     this.pos.setDestn("");
     this.router.navigate(['/home']);
     this.ap.appPages = [

@@ -22,7 +22,7 @@ export class HomePage {
   password: string;
   person: string[];
   user:any;
-  
+  entro: boolean;
   constructor(private router: Router,
     public toastController: ToastController,
     private postPvdr: PostProviderService,
@@ -34,6 +34,7 @@ export class HomePage {
     public platform: Platform,
     public gplus: GooglePlus) {
       this.person = [];
+      this.entro =false;
     }
 
   async proseslogin(){
@@ -201,10 +202,6 @@ export class HomePage {
     
    }
 
-
-
-
-
    async doGoogleLogin(){
     this.gplus.login({
       'webClientId': '369948839335-6rl89n9csfj5eqtf8h89tvjjtavcu4d9.apps.googleusercontent.com',
@@ -256,9 +253,9 @@ export class HomePage {
                   this.person.push(success.user.photoURL+'');
                   this.person.push(success.user.displayName+'');
                   this.postPvdr.setDestn(this.person);
-                  this.router.navigate(['/not']);
                 }else{
-                  this.singOut();
+                  this.singOut1();
+                  this.presentAlert("Debes ingresar con un correo institucional");
                 }
                       })
             .catch((gplusErr) => {
@@ -268,7 +265,9 @@ export class HomePage {
     }).catch( (msg) => {
       this.displayAlert(msg,"Gplus signin failed2")
     });
-      
+    if(this.person[0] === "google"){
+      this.router.navigate(["/not"]);
+    }
 
   }
 
@@ -310,7 +309,16 @@ export class HomePage {
   }
 
   singOut1(){
-    this.gplus.logout();
+    this.gplus.logout().then(
+      (msg) => {
+            if(firebase.auth().currentUser){
+              firebase.auth().signOut();
+            }
+      }).catch(
+      (msg) => {
+      });
+      this.postPvdr.setDestn("");
+      this.person = null;
   }
 
   si(){
