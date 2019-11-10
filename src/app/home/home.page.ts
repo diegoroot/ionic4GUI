@@ -21,6 +21,7 @@ export class HomePage {
   username: string;
   password: string;
   person: string[];
+  user:any;
   
   constructor(private router: Router,
     public toastController: ToastController,
@@ -190,7 +191,7 @@ export class HomePage {
         this.postPvdr.setDestn(this.person);
         this.router.navigate(['/not']);
       }else{
-        this.presentAlert();
+        //this.presentAlert();
         this.singOut();
       }
       console.log(ter);
@@ -205,42 +206,84 @@ export class HomePage {
 
 
    async doGoogleLogin(){
-    const loading = await this.loadingController.create({
-      message: 'Please wait...'
-    });
-    this.presentLoading(loading);
     this.gplus.login({
-      'scopes': '', // optional - space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
-      'webClientId': "965036285226-qvde1q8pdm8h7am1l3r3s0beqib5gfsq.apps.googleusercontent.com", // optional - clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
-      'offline': true, // Optional, but requires the webClientId - if set to true the plugin will also return a serverAuthCode, which can be used to grant offline access to a non-Google server
-      })
-      .then(user => {
-        //save user data on the native storage
-        this.person.push('google');
-        this.person.push(user.email+'');
-        this.person.push(user.photoURL+'');
-        this.person.push(user.displayName+'');
-        this.postPvdr.setDestn(this.person);
-        this.router.navigate(["/not"]);
-        this.nativeStorage.setItem('google_user', {
-          name: user.displayName,
-          email: user.email,
-          picture: user.imageUrl
-        })
-        .then(() => {
-           this.router.navigate(["/not"]);
-        }, (error) => {
-          console.log(error);
-        })
-        loading.dismiss();
-      }, err => {
-        console.log(err);
-        if(!this.platform.is('cordova')){
-          this.presentAlert();
+      'webClientId': '369948839335-6rl89n9csfj5eqtf8h89tvjjtavcu4d9.apps.googleusercontent.com',
+      'offline': true
+    }).then((obj) => {
+        if (!firebase.auth().currentUser) {
+            firebase.auth().signInWithCredential(firebase.auth.GoogleAuthProvider.credential(obj.idToken))
+            .then((success) => {
+                this.displayAlert(JSON.stringify(success),"signInWithCredential successful");
+                var ter = success.user.email.split("@",2);
+                console.log(success.user.photoURL);
+                if(ter[1]==="uceva.edu.co"){
+                  this.si();
+                  this.ap.appPages = [
+                    {
+                      title: 'Reservas',
+                      url: '/listarreservass',
+                      icon: 'list'
+                    },
+                    {
+                      title: 'Scanner QR',
+                      url: '/scanner',
+                      icon: 'search'
+                    },
+                    {
+                      title: 'Mis reservas',
+                      url: '/listarreservas1',
+                      icon: 'list'
+                    },
+                    {
+                      title: 'Crear reserva',
+                      url: '/registrarreserva',
+                      icon: 'add'
+                    },
+                    {
+                      title: 'Perfil',
+                      url: '/perfil',
+                      icon: 'person'
+                    },
+                    {
+                      title: 'Cerrar sesión',
+                      url: '/logoutt',
+                      icon: 'power'
+                    }
+                  ];
+                  //nombre-cod-correo-contraseña
+                  this.person.push('google');
+                  this.person.push(success.user.email+'');
+                  this.person.push(success.user.photoURL+'');
+                  this.person.push(success.user.displayName+'');
+                  this.postPvdr.setDestn(this.person);
+                  this.router.navigate(['/not']);
+                }else{
+                  this.singOut();
+                }
+                      })
+            .catch((gplusErr) => {
+                this.displayAlert(JSON.stringify(gplusErr),"GooglePlus failed")
+            });
         }
-        loading.dismiss();
-      })
+    }).catch( (msg) => {
+      this.displayAlert(msg,"Gplus signin failed2")
+    });
+      
+
   }
+
+
+  async displayAlert(value,title){
+    var alert;
+    alert = await this.alertController.create({
+      header: title,
+      subHeader: '',
+      message: JSON.stringify(value),
+      buttons: ['OK']
+    });
+
+  await alert.present();
+    }
 
 
   async presentLoading(loading) {
@@ -250,12 +293,12 @@ export class HomePage {
 
 
 
-   async presentAlert() {
+   async presentAlert(name:string) {
     var alert;
       alert = await this.alertController.create({
         header: 'Alert',
         subHeader: '',
-        message: 'Debes ingresar con el correo institucional',
+        message: name,
         buttons: ['OK']
       });
 
@@ -264,6 +307,10 @@ export class HomePage {
 
   singOut(){
     this.afAuth.auth.signOut();
+  }
+
+  singOut1(){
+    this.gplus.logout();
   }
 
   si(){
