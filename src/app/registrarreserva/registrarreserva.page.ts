@@ -168,7 +168,7 @@ export class RegistrarreservaPage implements OnInit {
       this.postPvdr.postData(body, 'file_aksi.php').subscribe(async data => {
        var alertpesan = data.msg;
        if (data.success) {
-         this.router.navigate(['/home']);
+         this.router.navigate(['/not']);
          const toast = await this.toastController.create({
           message: 'Register successfully',
           duration: 2000

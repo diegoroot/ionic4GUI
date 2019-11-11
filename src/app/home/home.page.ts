@@ -80,6 +80,7 @@ export class HomePage {
           }
         ];
         var tr = data.result;
+        this.person = [];
         this.person.push('login');
         this.person.push(tr.correo+'');
         this.person.push('null');
@@ -144,6 +145,7 @@ export class HomePage {
       console.log(err)
     }
   }
+
   async webGoogleLogin(): Promise <void>{
     try{
       const provider = new firebase.auth.GoogleAuthProvider();
@@ -248,6 +250,7 @@ export class HomePage {
                     }
                   ];
                   //nombre-cod-correo-contraseña
+                  this.person = [];
                   this.person.push('google');
                   this.person.push(success.user.email+'');
                   this.person.push(success.user.photoURL+'');
