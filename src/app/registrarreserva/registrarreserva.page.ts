@@ -10,7 +10,7 @@ import { async } from 'q';
   styleUrls: ['./registrarreserva.page.scss'],
 })
 export class RegistrarreservaPage implements OnInit {
-
+//getdatasalas
   res_id: number;
   res_num:string;
   res_hora_ini:string;
@@ -18,12 +18,31 @@ export class RegistrarreservaPage implements OnInit {
   res_id_sal:string;
   res_fecha:string;
   timestampp:string;
+  sala: string;
+  nombres: any[];
+  salas:any[];
 
   constructor(private router: Router,
     public toastController: ToastController,
-    private postPvdr: PostProviderService) { }
+    private postPvdr: PostProviderService) {
+      this.nombres = [];
+      this.salas=[];
+      let body = {
+        aksi: 'getdatasalas',
+        limit : 0,
+        start : 10,
+      };
+
+      this.postPvdr.postData(body, 'file_aksi.php').subscribe(data => {
+        for (let customer of data.result) {
+          this.nombres.push(customer.sal_nombre);
+          this.salas.push(customer);
+        }
+      });
+     }
 
   ngOnInit() {
+
   }
 
   async addRegister() {
@@ -84,4 +103,94 @@ export class RegistrarreservaPage implements OnInit {
 
     }
   }
+
+  async addRegisterr(){
+    var hora = this.res_hora_ini.split('T');
+    var hora1 = hora[1].split('.');
+    var ini = hora1[0];
+    hora = this.res_hora_fin.split('T');
+    hora1 = hora[1].split('.');
+    var fi = hora1[0];
+    var fe = this.res_fecha.split('T');
+    var h1 = ini.split(":");
+    var h2 = fi.split(":");
+    var si = 0;
+    for(let customer of this.salas){
+      if(customer.sal_nombre == this.sala){
+        si = customer.sal_id;
+      }
+    }
+    if (this.res_fecha == '') {
+      const toast = await this.toastController.create({
+      message: 'fecha is required',
+      duration: 2000
+      });
+      toast.present();
+    } else if (this.res_id_sal == '') {
+      const toast = await this.toastController.create({
+        message: 'sala is required',
+        duration: 2000
+        });
+      toast.present();
+    } else if (this.res_num == '') {
+      const toast = await this.toastController.create({
+        message: 'num is required',
+        duration: 2000
+        });
+      toast.present();
+
+    }else if (h1[0]>h2[0]) {
+      const toast = await this.toastController.create({
+        message: 'the start time must be greater than the end time',
+        duration: 2000
+        });
+      toast.present();
+
+    }else if (this.res_id == null) {
+      const toast = await this.toastController.create({
+        message: 'ID is required',
+        duration: 2000
+        });
+      toast.present();
+
+    } else {
+      
+      let body = {
+        res_id: this.res_id,
+        res_num: this.res_num,
+        res_hora_ini: ini,
+        res_hora_fin: fi,
+        res_id_sal: si,
+        res_fecha: fe[0].toString(),
+        timestampp: this.timestampp,
+        aksi: 'add_registerreservas'
+      };
+      this.postPvdr.postData(body, 'file_aksi.php').subscribe(async data => {
+       var alertpesan = data.msg;
+       if (data.success) {
+         this.router.navigate(['/home']);
+         const toast = await this.toastController.create({
+          message: 'Register successfully',
+          duration: 2000
+         });
+         toast.present();
+       } else {
+         const toast = await this.toastController.create({
+           message: alertpesan,
+           duration: 2000
+         });
+       }
+     });
+
+    }
+
+
+
+
+
+    
+  }
+
+
+
 }
