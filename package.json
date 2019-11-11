@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
+    "@ionic-native/barcode-scanner": "^5.16.0",
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/google-plus": "^5.16.0",
     "@ionic-native/native-storage": "^5.16.0",
@@ -38,6 +39,8 @@
     "cordova-plugin-network-information": "^2.0.2",
     "core-js": "^2.5.4",
     "firebase": "^7.2.2",
+    "ngx-qrcode2": "0.0.9",
+    "phonegap-plugin-barcodescanner": "^8.1.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -93,7 +96,10 @@
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-nativestorage": {}
+      "cordova-plugin-nativestorage": {},
+      "phonegap-plugin-barcodescanner": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      }
     },
     "platforms": [
       "android"
