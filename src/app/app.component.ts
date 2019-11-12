@@ -20,6 +20,11 @@ export class AppComponent {
       title: 'Reservas',
       url: '/listarreservas',
       icon: 'list'
+    },
+    {
+      title: 'Scanner',
+      url: '/scanner',
+      icon: 'list'
     }
   ];
 
