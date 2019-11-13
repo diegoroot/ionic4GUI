@@ -83,6 +83,7 @@ export class Listarreservas1Page implements OnInit {
   }
 
   delCustomer(customer: any){
+    console.log('eliminar: '+ customer.res_id);
     let body = {
       aksi: 'deletereserva',
       res_id: customer.res_id
@@ -90,7 +91,7 @@ export class Listarreservas1Page implements OnInit {
     this.postPvdr.postData(body, 'file_aksi.php').subscribe(async data => {
       var alertpesan = data.msg;
       if (data.success) {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/not']);
         const toast = await this.toastController.create({
          message: 'Update successfully',
          duration: 2000

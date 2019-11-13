@@ -19,6 +19,9 @@ import { NavController} from '@ionic/angular';
 import { DetallePageModule} from './detalle/detalle.module';
 import { LogouttPageModule } from './logoutt/logoutt.module';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { BarcodeScanner} from '@ionic-native/barcode-scanner/ngx';
+
 const firebaseConfig = {
   apiKey: "AIzaSyCiL1VWUvy6VmCHd1OvE0B3hlKcs5Sii1c",
   authDomain: "decent-era-254723.firebaseapp.com",
@@ -40,7 +43,8 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    NgxQRCodeModule
   ],
   providers: [
     StatusBar,
@@ -51,6 +55,7 @@ const firebaseConfig = {
     PostProviderService,
     DetallePageModule,
     LogouttPageModule,
+     BarcodeScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

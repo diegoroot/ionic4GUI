@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
+// login-misreservas
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -19,11 +19,6 @@ export class AppComponent {
     {
       title: 'Reservas',
       url: '/listarreservas',
-      icon: 'list'
-    },
-    {
-      title: 'Scanner',
-      url: '/scanner',
       icon: 'list'
     }
   ];

@@ -17,14 +17,17 @@ export class RegistrarreservaPage implements OnInit {
   res_hora_fin:string;
   res_id_sal:string;
   res_fecha:string;
+  res_id_prof:number;
   timestampp:string;
   sala: string;
   nombres: any[];
+  per: any[];
   salas:any[];
 
   constructor(private router: Router,
     public toastController: ToastController,
     private postPvdr: PostProviderService) {
+      this.per = this.postPvdr.getDestn();
       this.nombres = [];
       this.salas=[];
       let body = {
@@ -146,22 +149,15 @@ export class RegistrarreservaPage implements OnInit {
         });
       toast.present();
 
-    }else if (this.res_id == null) {
-      const toast = await this.toastController.create({
-        message: 'ID is required',
-        duration: 2000
-        });
-      toast.present();
-
     } else {
-      
+      console.log('id_prof '+Number(this.postPvdr[4]));
       let body = {
-        res_id: this.res_id,
         res_num: this.res_num,
         res_hora_ini: ini,
         res_hora_fin: fi,
         res_id_sal: si,
         res_fecha: fe[0].toString(),
+        res_id_prof: Number(this.per[4]),
         timestampp: this.timestampp,
         aksi: 'add_registerreservas'
       };
