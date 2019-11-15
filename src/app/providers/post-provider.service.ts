@@ -7,9 +7,10 @@ import { map } from "rxjs/operators";
 })
 export class PostProviderService {
 
-    server: string = 'http://192.168.43.63/ionic4login/server_api/';
+    server: string = 'http://192.168.0.21/ionic4login/server_api/';
     public objeto: any;
     public res:any;
+    public ext: any;
     constructor(public http: Http) {
 
     }
@@ -38,4 +39,12 @@ export class PostProviderService {
       getRes() {
         return this.res;
       }
+
+      getExt(){
+        return this.ext;
+      }
+
+    public setExt(ext){
+      this.ext = ext;
+    }
 }

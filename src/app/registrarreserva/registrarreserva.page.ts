@@ -151,6 +151,11 @@ export class RegistrarreservaPage implements OnInit {
 
     } else {
       console.log('id_prof '+Number(this.postPvdr[4]));
+      const toast = await this.toastController.create({
+        message: 'crea '+Number(this.postPvdr[4]),
+        duration: 2000
+      });
+      toast.present();
       let body = {
         res_num: this.res_num,
         res_hora_ini: ini,
