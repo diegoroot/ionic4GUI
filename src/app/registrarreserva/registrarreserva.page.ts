@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { PostProviderService } from '../providers/post-provider.service';
 import { async } from 'q';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-registrarreserva',
@@ -23,7 +24,6 @@ export class RegistrarreservaPage implements OnInit {
   nombres: any[];
   per: any[];
   salas:any[];
-
   constructor(private router: Router,
     public toastController: ToastController,
     private postPvdr: PostProviderService) {
@@ -43,6 +43,7 @@ export class RegistrarreservaPage implements OnInit {
         }
       });
      }
+
 
   ngOnInit() {
 
@@ -117,6 +118,7 @@ export class RegistrarreservaPage implements OnInit {
     var fe = this.res_fecha.split('T');
     var h1 = ini.split(":");
     var h2 = fi.split(":");
+    console.log('h1[0] = ' + h1[0]+ " h2[0] = "+h2[0]);
     var si = 0;
     for(let customer of this.salas){
       if(customer.sal_nombre == this.sala){
@@ -142,7 +144,7 @@ export class RegistrarreservaPage implements OnInit {
         });
       toast.present();
 
-    }else if (h1[0]>h2[0]) {
+    }else if (Number(h1[0])>Number(h2[0]) || Number(h1[0])==Number(h2[0])) {
       const toast = await this.toastController.create({
         message: 'the start time must be greater than the end time',
         duration: 2000
@@ -150,12 +152,6 @@ export class RegistrarreservaPage implements OnInit {
       toast.present();
 
     } else {
-      console.log('id_prof '+Number(this.postPvdr[4]));
-      const toast = await this.toastController.create({
-        message: 'crea '+Number(this.postPvdr[4]),
-        duration: 2000
-      });
-      toast.present();
       let body = {
         res_num: this.res_num,
         res_hora_ini: ini,
@@ -183,15 +179,6 @@ export class RegistrarreservaPage implements OnInit {
        }
      });
 
-    }
-
-
-
-
-
-    
+    } 
   }
-
-
-
 }
