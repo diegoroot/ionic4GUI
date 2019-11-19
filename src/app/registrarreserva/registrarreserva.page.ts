@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { PostProviderService } from '../providers/post-provider.service';
 import { async } from 'q';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-registrarreserva',
@@ -17,14 +18,16 @@ export class RegistrarreservaPage implements OnInit {
   res_hora_fin:string;
   res_id_sal:string;
   res_fecha:string;
+  res_id_prof:number;
   timestampp:string;
   sala: string;
   nombres: any[];
+  per: any[];
   salas:any[];
-
   constructor(private router: Router,
     public toastController: ToastController,
     private postPvdr: PostProviderService) {
+      this.per = this.postPvdr.getDestn();
       this.nombres = [];
       this.salas=[];
       let body = {
@@ -40,6 +43,7 @@ export class RegistrarreservaPage implements OnInit {
         }
       });
      }
+
 
   ngOnInit() {
 
@@ -114,6 +118,7 @@ export class RegistrarreservaPage implements OnInit {
     var fe = this.res_fecha.split('T');
     var h1 = ini.split(":");
     var h2 = fi.split(":");
+    console.log('h1[0] = ' + h1[0]+ " h2[0] = "+h2[0]);
     var si = 0;
     for(let customer of this.salas){
       if(customer.sal_nombre == this.sala){
@@ -139,29 +144,21 @@ export class RegistrarreservaPage implements OnInit {
         });
       toast.present();
 
-    }else if (h1[0]>h2[0]) {
+    }else if (Number(h1[0])>Number(h2[0]) || Number(h1[0])==Number(h2[0])) {
       const toast = await this.toastController.create({
         message: 'the start time must be greater than the end time',
         duration: 2000
         });
       toast.present();
 
-    }else if (this.res_id == null) {
-      const toast = await this.toastController.create({
-        message: 'ID is required',
-        duration: 2000
-        });
-      toast.present();
-
     } else {
-      
       let body = {
-        res_id: this.res_id,
         res_num: this.res_num,
         res_hora_ini: ini,
         res_hora_fin: fi,
         res_id_sal: si,
         res_fecha: fe[0].toString(),
+        res_id_prof: Number(this.per[4]),
         timestampp: this.timestampp,
         aksi: 'add_registerreservas'
       };
@@ -182,15 +179,6 @@ export class RegistrarreservaPage implements OnInit {
        }
      });
 
-    }
-
-
-
-
-
-    
+    } 
   }
-
-
-
 }

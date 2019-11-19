@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .imagen{
   background-image:  url("../assets/icon/fondo2.jpg");
                     
@@ -77,3 +78,50 @@ ion-toolbar {
 }
 
 
+=======
+.hide-card {
+    -webkit-box-shadow: none!important;
+  }
+  
+  .custom-avatar {
+    height: 7vw;
+    width: 7vw;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sidebar-bg {
+    background-color: #383a4c; }
+
+    .bar{
+      background: #383a4c;
+      border-width: 0px; }
+
+  ion-menu{
+    ion-content{
+      --ion-background-color:#00a859;
+      ion-list{
+        ion-item{
+          ion-label{
+            color: white;
+          }
+          p{
+            color: white;
+          }
+        }
+        
+      }
+    }
+  }
+
+  ion-header{
+    ion-toolbar{
+      --ion-background-color:#00a859;
+      color:white;
+      font-size: 2em;
+    }
+
+  }
+>>>>>>> 5ebc06ce4c4e32af08da4f699a301a20975b6d10

@@ -3,9 +3,13 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+<<<<<<< HEAD
  import { IonSlides } from '@ionic/angular';
  import { ViewChild } from '@angular/core';
 
+=======
+// login-misreservas
+>>>>>>> 5ebc06ce4c4e32af08da4f699a301a20975b6d10
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -13,11 +17,17 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 
 export class AppComponent {
+<<<<<<< HEAD
   ImageArray:any[];
 
 switcher: IonSlides;
 
 
+=======
+  mostrar =1;
+  nombre = "";
+  foto = "";
+>>>>>>> 5ebc06ce4c4e32af08da4f699a301a20975b6d10
   public appPages = [
     {
       title: 'Noticias',
@@ -28,6 +38,7 @@ switcher: IonSlides;
       title: 'Reservas',
       url: '/listarreservas',
       icon: 'list'
+<<<<<<< HEAD
     },
      {
       title: 'Mapa',
@@ -35,6 +46,9 @@ switcher: IonSlides;
       icon: 'map'
     },
   
+=======
+    }
+>>>>>>> 5ebc06ce4c4e32af08da4f699a301a20975b6d10
   ];
  slideOptions = {
        initialSlide: 1,
