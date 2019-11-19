@@ -2,3 +2,19 @@
   width: 95%;
   height: 35%;
 }
+
+ion-content{
+  div{
+    ion-button{
+      --background:#00a859;
+    }
+  }
+}
+
+ion-header{
+  ion-toolbar{
+    --ion-background-color:#00a859;
+    color:white;
+  }
+
+}

@@ -36,6 +36,8 @@ export class HomePage {
     public gplus: GooglePlus) {
       this.person = [];
       this.entro =false;
+      this.postPvdr.setDestn("");
+      this.postPvdr.setExt("");
       this.id = 0;
       this.singOut1();
     }
@@ -88,6 +90,9 @@ export class HomePage {
         this.person.push(tr.correo+'');
         this.person.push('null');
         this.person.push(tr.nombre+'');
+        this.ap.nombre = tr.nombre+"";
+        this.ap.foto = '../../assets/Uceva.jpg';
+        this.ap.mostrar = 0;
         this.person.push(tr.id+'');
         console.log(this.person);
         this.postPvdr.setDestn(this.person);
@@ -210,6 +215,9 @@ export class HomePage {
                   this.person.push(success.user.email+'');
                   this.person.push(success.user.photoURL+'');
                   this.person.push(success.user.displayName+'');
+                  this.ap.nombre = success.user.displayName;
+                  this.ap.foto = success.user.photoURL;
+                  this.ap.mostrar = 0;
                   this.person.push(this.postPvdr.getExt()+'');
                   this.postPvdr.setDestn(this.person);
                   this.router.navigate(['/not']);

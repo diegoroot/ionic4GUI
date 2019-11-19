@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 @Component({
   selector: 'app-not',
   templateUrl: './not.page.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotPage implements OnInit {
 
-  constructor() { }
+  constructor(private iab: InAppBrowser) { }
 
   ngOnInit() {
+  }
+
+  openBlank() {
+    this.iab.create(`https://uceva.edu.co`, `_blank`);
   }
 
 }

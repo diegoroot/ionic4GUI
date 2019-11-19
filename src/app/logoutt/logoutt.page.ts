@@ -14,7 +14,10 @@ export class LogouttPage implements OnInit {
     private router: Router,
     public ap: AppComponent) {      
     this.pos.setDestn("");
-    this.router.navigate(['/home']);
+    this.pos.setExt('');
+    this.ap.mostrar =1;
+    this.ap.nombre="";
+    this.ap.foto = "";
     this.ap.appPages = [
       {
         title: 'Noticias',
@@ -27,6 +30,7 @@ export class LogouttPage implements OnInit {
         icon: 'list'
       }
     ];
+    this.router.navigate(['/home']);
 
   }
 
