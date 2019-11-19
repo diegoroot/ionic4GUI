@@ -1,0 +1,16 @@
+ion-header{
+    ion-toolbar{
+      --ion-background-color:#00a859;
+      color:white;
+    }
+  
+  }
+
+  ion-content{
+    ion-card{
+      ion-button{
+        --background:#00a859;
+      }
+    }
+
+}
