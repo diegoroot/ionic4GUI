@@ -20,8 +20,13 @@ import { DetallePageModule} from './detalle/detalle.module';
 import { LogouttPageModule } from './logoutt/logoutt.module';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { IonSlides } from '@ionic/angular';
 import { BarcodeScanner} from '@ionic-native/barcode-scanner/ngx';
+
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyCiL1VWUvy6VmCHd1OvE0B3hlKcs5Sii1c",
@@ -45,7 +50,8 @@ const firebaseConfig = {
     AngularFireAuthModule,
     HttpClientModule,
     HttpModule,
-    NgxQRCodeModule
+    NgxQRCodeModule,
+  
   ],
   providers: [
     StatusBar,
@@ -57,6 +63,8 @@ const firebaseConfig = {
     InAppBrowser,
     DetallePageModule,
     LogouttPageModule,
+     Geolocation,
+
      BarcodeScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

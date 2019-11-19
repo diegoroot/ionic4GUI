@@ -24,7 +24,10 @@ const routes: Routes = [
   { path: 'listarreservas1', loadChildren: './listarreservas1/listarreservas1.module#Listarreservas1PageModule' },
   { path: 'listarreservass', loadChildren: './listarreservass/listarreservass.module#ListarreservassPageModule' },
   { path: 'scanner', loadChildren: './scanner/scanner.module#ScannerPageModule' },
-  { path: 'logoutt', loadChildren: './logoutt/logoutt.module#LogouttPageModule' }
+  { path: 'logoutt', loadChildren: './logoutt/logoutt.module#LogouttPageModule' },
+{ path: 'mapa', loadChildren: './mapa/mapa.module#MapaPageModule' },
+  { path: 'pruebamapa', loadChildren: './pruebamapa/pruebamapa.module#PruebamapaPageModule' }
+
 ];
 
 @NgModule({

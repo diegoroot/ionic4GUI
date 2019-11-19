@@ -1,46 +1,46 @@
 <ion-header>
-  <ion-toolbar>
-      <ion-buttons slot="start">
-          <ion-back-button defaultHref="/not"></ion-back-button>
-      </ion-buttons>
-      <ion-title>Registrar Reserva</ion-title>
-    </ion-toolbar>
-</ion-header>
-
-<ion-content padding>
-  <ion-list>
-    <ion-item>
-      <ion-label position="floating">Numero </ion-label>
-      <ion-input type="text" [(ngModel)]="res_num"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Hora inicio</ion-label>
-  <ion-datetime displayFormat="HH:mm" [(ngModel)]="res_hora_ini"></ion-datetime>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Hora fin</ion-label>
-      <ion-datetime displayFormat="HH:mm" [(ngModel)]="res_hora_fin"></ion-datetime>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Salas</ion-label>
-      <ion-select [compareWith]="compareWith" [(ngModel)]="sala">
-        <ion-select-option *ngFor="let user of nombres" >{{user + ''}}</ion-select-option>
-      </ion-select>
-    </ion-item>
-
-
-    <ion-item>
-      <ion-label position="floating">Res_fecha</ion-label>
-      <ion-datetime displayFormat="MM/DD/YYYY" min="2019-10-15" max="2019-12-30"
-      [(ngModel)]="res_fecha" placeholder="Select Date Mes/Día/Año" ></ion-datetime>
-    </ion-item>
-
-    </ion-list>
-  <div padding>
-    <ion-button expand="block" shape="round" (click)="addRegisterr()">Submit</ion-button>
-  </div>
-
-</ion-content>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/not"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Registrar Reserva</ion-title>
+      </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Numero </ion-label>
+        <ion-input type="text" [(ngModel)]="res_num"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Hora inicio</ion-label>
+    <ion-datetime displayFormat="HH:mm" [(ngModel)]="res_hora_ini"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Hora fin</ion-label>
+        <ion-datetime displayFormat="HH:mm" [(ngModel)]="res_hora_fin"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Salas</ion-label>
+        <ion-select [compareWith]="compareWith" [(ngModel)]="sala">
+          <ion-select-option *ngFor="let user of nombres" >{{user + ''}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+  
+      <ion-item>
+        <ion-label position="floating">Res_fecha</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" min="2019-10-15" max="2019-12-30"
+        [(ngModel)]="res_fecha" placeholder="Select Date Mes/Día/Año" ></ion-datetime>
+      </ion-item>
+  
+      </ion-list>
+    <div padding>
+      <ion-button expand="block" shape="round" (click)="addRegisterr()">Submit</ion-button>
+    </div>
+  
+  </ion-content>

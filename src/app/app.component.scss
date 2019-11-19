@@ -1,45 +1,45 @@
 .hide-card {
-    -webkit-box-shadow: none!important;
-  }
-  
-  .custom-avatar {
-    height: 7vw;
-    width: 7vw;
-    border-radius: 50%;
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  -webkit-box-shadow: none!important;
+}
 
-  .sidebar-bg {
-    background-color: #383a4c; }
+.custom-avatar {
+  height: 7vw;
+  width: 7vw;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    .bar{
-      background: #383a4c;
-      border-width: 0px; }
+.sidebar-bg {
+  background-color: #383a4c; }
 
-  ion-menu{
-    ion-content{
-      --ion-background-color:#00a859;
-      ion-list{
-        ion-item{
-          ion-label{
-            color: white;
-          }
-          p{
-            color: white;
-          }
+  .bar{
+    background: #383a4c;
+    border-width: 0px; }
+
+ion-menu{
+  ion-content{
+    --ion-background-color:#00a859;
+    ion-list{
+      ion-item{
+        ion-label{
+          color: white;
         }
-        
+        p{
+          color: white;
+        }
       }
+      
     }
   }
+}
 
-  ion-header{
-    ion-toolbar{
-      --ion-background-color:#00a859;
-      color:white;
-      font-size: 2em;
-    }
-
+ion-header{
+  ion-toolbar{
+    --ion-background-color:#00a859;
+    color:white;
+    font-size: 2em;
   }
+
+}

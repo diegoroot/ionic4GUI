@@ -1,11 +1,81 @@
 <ion-header>
-  <ion-toolbar>
-      <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-    <ion-title>Noticias</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content center text-center>   
-    <iframe src ="http://www.uceva.edu.co/index.php/noticias-y-eventos-uceva" style="position:fixed; top:50px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
- </ion-content>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+      <ion-title>Noticias</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+<ion-card>
+        <ion-slides [options]="slideOptions" pager="true" loop="true">
+        <ion-slide *ngFor="let image of ImageArray">
+           <img src="{{image.image}}" width="400" height="300">
+        </ion-slide>
+
+    </ion-slides >
+  </ion-card>
+
+
+  <ion-card>
+        <img src="http://www.uceva.edu.co/images/uceva/slideshow/Banner_Ing_Sistemas_acredita.jpg" />
+        <ion-card-header>
+          <ion-card-subtitle>Publicado el 04 Junio 2019</ion-card-subtitle>
+          <ion-card-title>CNA APRUEBA DOCUMENTOS PARA CONDICIONES INICIALES PARA PROCESO DE ACREDITACIÓN DE ALTA CALIDAD PARA PROGRAMA DE INGENIERÍA DE SISTEMAS</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+         El Consejo Nacional de Acreditación (CNA), aprobó el documento de condiciones iniciales presentado por la Facultad de Ingeniería, programa de Ingeniería de Sistemas en el mes de marzo pasado para el proceso de acreditación de Alta Calidad.
+
+Desde la Facultad se envió el cronograma de autoevaluación con actividades hasta el próximo 6 de diciembre de 2019. Se espera que el CNA confirme la visita de los Pares evaluadores a la Uceva para revisión del documento presentado de condiciones iniciales.
+        </ion-card-content>
+      </ion-card>
+
+
+ <ion-card>
+        <img src="http://www.uceva.edu.co/images/Bannerinscripciones2.jpg" />
+        <ion-card-header>
+         
+          <ion-card-title>Inscríbete !</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+      Para mas información ingresa a <a href="http://www.uceva.edu.co/index.php/como-hacer-parte-de-la-uceva">Inscripciones UCEVA</a>
+        </ion-card-content>
+      </ion-card>
+
+
+       <ion-card>
+        <img src="http://www.uceva.edu.co/images/Reconocimientoprogramaingeneria.jpg" />
+        <ion-card-header>
+          <ion-card-subtitle>Publicado el 13 Noviembre 2019</ion-card-subtitle>
+          <ion-card-title>Acofaen hace reconocimiento al Programa de Enfermería</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+        La Asociación de Facultades de Enfermería ACOFAEN, se encuentra realizando los días 7 y 8 de noviembre el No. 82 Consejo de Decanas Directoras de Enfermería de toda Colombia, en la ciudad de Cali con apoyo de la Universidad Libre sede Cali y Universidad del Valle. En este evento se reúnen más de 60 Decanas y Directoras de todo el país. La presidenta de Acofaen Dolly Magnolia González Hoyos, decana de la universidad de Caldas realizó reconocimiento público de las unidades académicas que cumplieron 20, 25 y 40 años de creación de los programas de enfermería.
+
+A propósito de este evento, le correspondió a la Facultad de Ciencias de Salud de la Uceva, programa de Enfermería, recibir el reconocimiento por los 25 años de servicio, que se cumplieron la semana pasada, con esto resaltando el liderazgo y la labor que realizan las directivas en la formación integral de los futuros profesionales de enfermería.
+
+La Uceva agradece a ACOFAEN todo el acompañamiento que ha venido haciendo a nuestra institución en procura de la alta calidad académica.
+        </ion-card-content>
+      </ion-card>
+
+        <ion-card>
+        <img src="http://www.uceva.edu.co/images/UniversidaddelTolima.jpg" />
+        <ion-card-header>
+          <ion-card-subtitle>Publicado el 12 Noviembre 2019</ion-card-subtitle>
+          <ion-card-title>Intercambio Académico Deportivo
+</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+       Hace presencia en la ciudad de Tuluá, más propiamente en la Uceva, una delegación de estudiantes de séptimo semestre del programa de Educación Física, Recreación y Deporte de la Universidad del Tolima, bajo la dirección de la Licenciada Elsa Victoria Villa Molano, quienes realizan durante los días 7 y 8 de noviembre de 2019, un intercambio académico-deportivo desde la Catedra de la Didáctica del Voleibol con los estudiantes de cuarto semestre del programa de la Licenciatura en Educación Física, Recreación y Deporte, liderado por el Especialista Gabriel Aldana Álzate de la Facultad de Ciencias de la Educación.
+
+Este intercambio académico permite a los estudiantes de ambas instituciones tener un acercamiento en procesos de formación y entrenamiento deportivo, así como proponer estrategias metodológicas para la enseñanza del voleibol desde la educación física.
+
+A propósito del profesor Aldana Álzate, la Uceva y en especial la Facultad de Ciencias de la Educación, su Decano Carlos Hernán Méndez Díaz, hace extensivo el saludo de felicitaciones por el logro obtenido recientemente con Selección Valle en los Intercolegiados Supérate, siendo Campeón Zonal nacional Pacifico venciendo a departamentos como Chocó, Cauca y Nariño. Este equipo representará al Valle en la final Nacional en Tunja Boyacá en el mes de noviembre del 29 al 5 de diciembre de 2019.
+        </ion-card-content>
+      </ion-card>
+
+
+      
+
+
+
