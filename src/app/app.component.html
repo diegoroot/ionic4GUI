@@ -1,5 +1,4 @@
 <ion-app>
-<<<<<<< HEAD
 
   <ion-split-pane contentId="main-content" >
 
@@ -25,32 +24,13 @@
             <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" class="backgound-image" >
               <ion-icon slot="start" [name]="p.icon" > </ion-icon>
               <ion-label class="tab-label" color="dark" >
-=======
-  <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Menú</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content>
-        <ion-list>
-          <ion-item *ngIf="mostrar === 0">
-              <img [src]="foto" class="custom-avatar"/>
-              <p>{{nombre}}</p>
-              <hr>
-          </ion-item>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon" color="light"></ion-icon>
-              <ion-label>
->>>>>>> 5ebc06ce4c4e32af08da4f699a301a20975b6d10
                 {{p.title}}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
 </ion-card>
+
 
 
       </ion-content>

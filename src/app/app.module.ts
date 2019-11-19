@@ -22,11 +22,11 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { IonSlides } from '@ionic/angular';
 import { BarcodeScanner} from '@ionic-native/barcode-scanner/ngx';
-<<<<<<< HEAD
+
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-=======
+
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
->>>>>>> 5ebc06ce4c4e32af08da4f699a301a20975b6d10
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyCiL1VWUvy6VmCHd1OvE0B3hlKcs5Sii1c",

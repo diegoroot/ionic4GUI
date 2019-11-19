@@ -106,11 +106,7 @@
       "phonegap-plugin-barcodescanner": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
-<<<<<<< HEAD
       "cordova-plugin-geolocation": {}
-=======
-      "cordova-plugin-inappbrowser": {}
->>>>>>> 5ebc06ce4c4e32af08da4f699a301a20975b6d10
     },
     "platforms": [
       "android"
