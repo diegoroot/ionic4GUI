@@ -16,6 +16,7 @@ export class ListarreservasPage implements OnInit {
   limit: number = 10;
   start: number = 0;
   usuarios: any[] = [];
+  ImageArray: any[];
   textoBuscar = '';
   
   constructor(private router: Router,

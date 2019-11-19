@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./not.page.scss'],
 })
 export class NotPage implements OnInit {
-
-  constructor() { }
+ImageArray: any[];
+  constructor() { this.ImageArray = [{'image' : '../../assets/icon/1.jpg'},
+    {'image' : '../../assets/icon/2.jpg'},
+    {'image' : '../../assets/icon/3.jpg'},
+    {'image' : '../../assets/icon/4.jpg'},
+    {'image' : '../../assets/icon/5.jpg'}];}
 
   ngOnInit() {
   }
+  slideOptions = {
+       initialSlide: 0,
+    speed: 500,
+    loop:true,
+    autoplay:true,
+    
+  };
 
 }

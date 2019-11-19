@@ -1,12 +1,12 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+  <ion-toolbar color="#FFFF" class="imagen">
+    <ion-buttons slot="start" >
+      <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <ion-title>
-      Iniciar sesión
+    <ion-title class="tab-item"><img src="../assets/icon/login.png"> &nbsp;Iniciar sesión
     </ion-title>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
@@ -25,8 +25,11 @@
   </ion-list>
 
   <div padding>
-    <ion-button expand="block" shape="round" (click)="proseslogin()" >Sign In</ion-button>
-    <ion-button expand="block" shape="round" (click)="doGoogleLogin()" >Login with Google</ion-button>
-    <ion-button expand="block" shape="round" (click)="formRegister()">Register</ion-button>
+    <ion-button color="light"expand="block" shape="round" (click)="proseslogin()" ><img src="../assets/icon/log.png">&nbsp;&nbsp;Log in</ion-button>
+    <br>
+    <ion-button color="light"expand="block" shape="round" (click)="doGoogleLogin()" ><img src="../assets/icon/googleini.png">&nbsp;&nbsp;Login with Google</ion-button>
+    
   </div>
+
+   
 </ion-content>

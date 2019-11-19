@@ -1,9 +1,9 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="#FFFF" class="imagen">
         <ion-buttons slot="start">
             <ion-back-button defaultHref="/home"></ion-back-button>
         </ion-buttons>
-        <ion-title>
+        <ion-title class="tab-item"> <img src="../assets/icon/calendar.png"> &nbsp;
           Listar Reservas
         </ion-title>
     </ion-toolbar>
@@ -32,19 +32,25 @@
           </ion-label>
         </ion-item>
     </ion-list>
+   
     <ion-list *ngIf="reservas.length > 0">
+       <ion-card>
         <ion-item-sliding *ngFor="let usuario of reservas | filtro:textoBuscar">
+          
           <ion-item>
             <ion-label> <p style="color:black;">
+
                 <b>Nombre:</b> {{usuario.prof_nombre}}
                 <br>
                 <b>Sala de sistemas:</b> {{usuario.sal_nombre}}
                 </p></ion-label>
           </ion-item>
+       
           <ion-item-options side="end">
             <ion-item-option color="primary" (click)="info(usuario)">Show</ion-item-option>  
           </ion-item-options>
         </ion-item-sliding>
+         </ion-card>
       </ion-list>
     <ion-infinite-scroll  (ionInfinite)="loadData($event)">
       <ion-infinite-scroll-content

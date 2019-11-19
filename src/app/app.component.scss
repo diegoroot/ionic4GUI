@@ -1,0 +1,79 @@
+.imagen{
+  background-image:  url("../assets/icon/fondo2.jpg");
+                    
+ 
+}
+.toolbar{
+  background-image:  url("../assets/icon/fondo2.jpg");
+   background-color: transparent;
+}
+
+	.no-scroll .scroll-content{
+	overflow: hidden;
+	}
+
+ion-content.background{
+    --background: url('../assets/icon/fondo2.jpg') 0 0/100% 100% no-repeat;
+}
+
+.bg-image{
+	background-image: url('https://ined21.com/wp-content/uploads/FONDO-DE-RESERVA-DE-GARANT%C3%8DA-EDUCATIVA-INED21.jpg');
+	backgroun-size: contain;
+	}
+ .backgound-image {
+  background-image: url('../assets/icon/fondo2.jpg');
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+.no-scroll .scroll-content{
+	overflow: hidden;
+	}
+	.tab-item{ 
+    margin: 0; 
+    line-height: 100px; 
+    box-sizing: content-box; 
+    font-size: 35px; 
+    color:#FFFFFF; 
+    font-family: 'Consolas'; 
+    opacity: 1; 
+    max-width: 200px; 
+} 
+
+.tab-label{ 
+    margin: 0; 
+    line-height: 50px; 
+    box-sizing: content-box; 
+    font-size: 18px; 
+    color:#000000; 
+    font-family: 'Consolas'; 
+    opacity: 1; 
+    max-width: 200px; 
+    
+} 
+ion-item{
+  background: transparent !important;
+}
+
+.item .item-content {
+  background-color: transparent !important;
+}
+
+ .imagen-list {
+  background-image: url('../assets/icon/fondo2.jpg');
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+}
+
+
+ion-toolbar {
+    --background: linear-gradient(162deg, rgba(56, 70, 108, .8) 20%, rgba(56, 70, 108, .8) 100%), url('https://www.nexiga.com/geomarketing-blog/wp-content/uploads/2017/11/shutterstock_654668191_Parkhaus.jpg') bottom no-repeat;
+}
+
+

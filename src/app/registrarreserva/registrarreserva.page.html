@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="#FFFF" class="imagen">
       <ion-buttons slot="start">
           <ion-back-button defaultHref="/not"></ion-back-button>
       </ion-buttons>
-      <ion-title>Registrar Reserva</ion-title>
+      <ion-title class="tab-item"> <img src="../assets/icon/note.png"> &nbsp;Registrar Reserva</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -39,7 +39,7 @@
 
 
     <ion-item>
-      <ion-label position="floating">Res_fecha</ion-label>
+      <ion-label position="floating">Fecha de reserva</ion-label>
       <ion-datetime displayFormat="MM/DD/YYYY" min="2019-10-10" max="2019-12-30"
       [(ngModel)]="res_fecha" placeholder="Select Date Mes/Día/Año" ></ion-datetime>
     </ion-item>
