@@ -8,7 +8,7 @@ import { map } from "rxjs/operators";
 export class PostProviderService {
 
 
-    server: string = 'http://localhost/ionic4login/server_api/';
+    server: string = 'http://10.42.0.1/ionic4login/server_api/';
 
 
     public objeto: any;

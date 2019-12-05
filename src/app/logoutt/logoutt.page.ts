@@ -28,7 +28,12 @@ export class LogouttPage implements OnInit {
         title: 'Reservas',
         url: '/listarreservas',
         icon: 'list'
-      }
+      },
+      {
+       title: 'Mapa',
+       url: '/mapa',
+       icon: 'map'
+     }
     ];
     this.router.navigate(['/home']);
 

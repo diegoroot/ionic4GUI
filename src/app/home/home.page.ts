@@ -79,6 +79,11 @@ export class HomePage {
             icon: 'person'
           },
           {
+           title: 'Mapa',
+           url: '/mapa',
+           icon: 'map'
+         },
+          {
             title: 'Cerrar sesión',
             url: '/logoutt',
             icon: 'power'
@@ -203,6 +208,11 @@ export class HomePage {
                       url: '/perfil',
                       icon: 'person'
                     },
+                    {
+                     title: 'Mapa',
+                     url: '/mapa',
+                     icon: 'map'
+                   },
                     {
                       title: 'Cerrar sesión',
                       url: '/logoutt',
