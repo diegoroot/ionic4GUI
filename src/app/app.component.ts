@@ -42,7 +42,11 @@ switcher: IonSlides;
       url: '/mapa',
       icon: 'map'
     },
-  
+    {
+      title: 'scan',
+      url: '/scanner',
+      icon: 'map'
+    }
 
     
 
