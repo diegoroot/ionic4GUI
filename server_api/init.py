@@ -1,7 +1,7 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import paho.mqtt.client as mqtt
 import mysql.connector
-broker_address="192.168.0.21"
+broker_address="localhost"
 client = mqtt.Client()
 client.connect(broker_address)
 mydb = mysql.connector.connect(
@@ -13,7 +13,16 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 app = Flask(__name__)
-@app.route('/home/<int:token>/<string:user>')
+@app.route('/home', methods=['POST'])
+
+
+def consul():
+	print('llorelo')
+	data = request.json
+	return jsonify(data)
+
+
+
 def pintar(token, user):
     consulta = "SELECT reserva.token,profesor.prof_nombre, profesor.prof_apellidos FROM `reserva` INNER JOIN profesor  WHERE profesor.prof_id = reserva.res_id_prof AND reserva.token = "+str(token)
     mycursor.execute(consulta)
